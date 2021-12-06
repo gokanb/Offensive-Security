@@ -150,6 +150,7 @@ def main():
     os.system('clear')
     
     data_recv, ip_bool = analyze_ether_header(data_recv)
+    
     if ip_bool:
         data_recv, tcp_udp = analyze_ip_header(data_recv)
     else:
