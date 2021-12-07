@@ -1,7 +1,7 @@
 #!/ur/bin/env python
 
 # Author: Gokan Bektas
-# Description: 
+# Description: This application will 
 
 
 #importing libraries
