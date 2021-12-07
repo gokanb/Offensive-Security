@@ -5,7 +5,7 @@
 
 
 import argparse
-from data_download.HTTPClient import HTTPClient
+from  HTTPClient import HTTPClient
 
 REMOTE_SERVER_HOST = 'http://www.cnn.com'
 
