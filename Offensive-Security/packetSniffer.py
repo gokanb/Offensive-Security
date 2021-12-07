@@ -167,9 +167,6 @@ def analyze_ether_header(data_recv):
     return data, ip_bool    
     
     
-    
-    
-    
     # socket(AF_INET,RAW_SOCKET,...) means Layer3 socket , Network Layer Protocol = IPv4
     # socket.htons(0x0003)captures all the send & receive traffic from the network interface.
 def main():
