@@ -178,7 +178,7 @@ def main():
     
     if sock_created == False:
         #sniffer_socket=socket.socket(socket.PF_PACKET, socket.SOCK_RAW, socket.htons(0x0003))
-        sniffer_socket =socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.htons(0x0003)) 
+        sniffer_socket = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.htons(0x0003)) 
         sock_created = True
         
     data_recv = sniffer_socket.recv(2048)
