@@ -7,7 +7,7 @@
 from socket import *
 import argparse
 from threading import *
-from typing import final 
+from typing import final
 from colorama import Fore, Style #color and style print out. 
 
 #Scanning connection of host's that open or close. 
