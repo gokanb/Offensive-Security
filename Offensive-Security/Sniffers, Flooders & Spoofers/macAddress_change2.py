@@ -37,7 +37,7 @@ def get_random_mac_address():
 #this is to restore Mac address in case something goes wrong
 def get_current_mac(interface):
     output = subprocess.check_output(['ifconfig', interface])
-    return re.search('\w\w:\w\w:\w\w:\w\w:\w\w:\w\w', str(output)).group(0)
+    return re.search('\w\w:\w\w:\w\w:\w\w:\w\w', str(output)).group(0)
     
 if __name__ == '__main__':
     print('[+] Welcome to MAC ADDRESS Changer')
@@ -54,6 +54,7 @@ if __name__ == '__main__':
             new_mac_summary = subprocess.check_output(['ifconfig', interface])
             if random_mac in str(new_mac_summary):
                 print('\r[+] MAC Address Changed to', random_mac, end=' ')
+                sys.stdout.flush()
             time.sleep(TIME_TO_WAIT)
             
     except KeyboardInterrupt:
