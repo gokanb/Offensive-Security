@@ -170,14 +170,15 @@ def analyze_ether_header(data_recv):
     
     
     
-    
+    # socket(AF_INET,RAW_SOCKET,...) means Layer3 socket , Network Layer Protocol = IPv4
+    # socket.htons(0x0003)captures all the send & receive traffic from the network interface.
 def main():
     global sock_created
     global sniffer_socket
     
     if sock_created == False:
         #sniffer_socket=socket.socket(socket.PF_PACKET, socket.SOCK_RAW, socket.htons(0x0003))
-        sniffer_socket =socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.htons(0x0003))
+        sniffer_socket =socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.htons(0x0003)) 
         sock_created = True
         
     data_recv = sniffer_socket.recv(2048)
