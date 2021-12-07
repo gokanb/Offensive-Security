@@ -1,9 +1,9 @@
 #!/ur/bin/env python
 
-from request_handler import RequestHandler
-from http.server import HTTPServer
+from request_handler import RequestHandler #importing reqest handler lib 
+from http.server import HTTPServer         #importing http server
 
-class CustomHTTPServer(HTTPServer):
+class CustomHTTPServer(HTTPServer):        # creating class that creates custo http server given host - port 
     "A custom HTTP server"
     def __init__(self, host, port):
         server_address = (host, port)
