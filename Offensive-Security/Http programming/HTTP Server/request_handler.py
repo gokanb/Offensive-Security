@@ -1,5 +1,6 @@
 #!/ur/bin/env python
 
+from http import server
 from http.server import BaseHTTPRequestHandler #importing from server 
 
 class RequestHandler(BaseHTTPRequestHandler):  #creating class 
@@ -11,5 +12,5 @@ class RequestHandler(BaseHTTPRequestHandler):  #creating class
         self.send_header('Content-type', 'text/html')
         self.end_headers()
         #send the message to browser
-        self.wfile.write("Hello from server!")
+        self.wfile.write('<h1>Hello from server')
         return
