@@ -8,7 +8,7 @@ from customHTTP_server import CustomHTTPServer
 from request_handler import RequestHandler
 
 DEFAULT_HOST = '127.0.0.1'          
-DEFAULT_PORT = 8800
+DEFAULT_PORT = 8000
 
 def run_server(port):      #creating function that run the server.
     try:
