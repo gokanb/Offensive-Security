@@ -1,11 +1,11 @@
 #!/ur/bin/env python
 
-from http.server import BaseHTTPRequestHandler
+from http.server import BaseHTTPRequestHandler #importing from server 
 
-class RequestHandler(BaseHTTPRequestHandler):
+class RequestHandler(BaseHTTPRequestHandler):  #creating class 
     """Custom request handler"""
 
-    def do_GET(self):
+    def do_GET(self):                          #create function 
         """Handler for the Get requests"""
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
