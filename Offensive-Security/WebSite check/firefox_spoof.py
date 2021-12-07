@@ -5,7 +5,7 @@ import urllib.error
 import urllib.parse
 
 BROWSER = 'Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0'
-URL = 'http://www/python.org'
+URL = 'http://www.python.org'
 
 def firefox_spoof():
     
