@@ -31,7 +31,7 @@ def get_random_mac_address():
     characters = "0123456789abcdef"
     random_mac_address = "00"
     for i in range(5):
-        random_mac_address += ':' random.choice(characters) + random.choice(characters)
+        random_mac_address += ':' + random.choice(characters) + random.choice(characters)
     return random_mac_address    
     
 #this is to restore Mac address in case something goes wrong
