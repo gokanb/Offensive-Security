@@ -10,8 +10,8 @@ def change_mac_add(interface, mac):
     subprocess.call(["ifconfig " + interface + " up "])
     
 def main():
-    interface = input('[*]Enter interface to change MAC address on: ')
-    new_mac_add = input("[*] Enter  Mac address to change to: ")
+    interface = input('[* ]Enter interface to change MAC address on: ')
+    new_mac_add = input("[*] Enter new Mac address to change to: ")
     
     before_change = subprocess.check_output(["ifconfig " + interface])
     change_mac_add(interface, new_mac_add)
