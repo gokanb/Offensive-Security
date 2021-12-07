@@ -24,7 +24,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='HTTP Client Example')
     parser.add_argument('--host', action="store", dest="host", default=REMOTE_SERVER_HOST)
     
-    given_arges = parser.parse_args()
-    host = given_arges.host
+    given_args = parser.parse_args()
+    host = given_args.host
     client = HTTPClient(host)
     print (client.fetch())
