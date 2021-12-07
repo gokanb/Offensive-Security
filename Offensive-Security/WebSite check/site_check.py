@@ -13,8 +13,10 @@ HTTP_GOOD_CODES = [http.client.OK, http.client.FOUND, http.client.MOVED_PERMANEN
 
 
 def get_server_status_code(url):
+    
     """
     Acquire just the header of the site and return the server's status code.
+    
     """
    
     host, path = urllib.parse.urlparse(url)[1:3] 
