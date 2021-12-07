@@ -1,25 +1,35 @@
 #!/ur/bin/env python
 
-# Author:Gokan Bektas
+# Author: Gokan Bektas
 # Description: 
 
-import socket
-import os
-import sys
-import struct
-import binascii
 
+#importing libraries
+
+import socket     # Socket programming is a way of connecting two nodes on a network to communicate with each other.      
+import os         # The OS module in python provides functions for interacting with the operating system
+import sys        # Path is a built-in variable within the sys module. It contains a list of directories that the interpreter will search in for the required modul
+import struct     # Interpret bytes as packed binary data
+import binascii   # The binascii module contains a number of methods to convert between binary and various ASCII-encoded binary representations
+
+
+# creating sock variable as false
 sock_created = False
-sniffer_socket = 0
+sniffer_socket = 0      # zero refers false , one refers true
 
+
+
+# def function for analyze udp header
 def analyze_udp_header(data_recv):
-    udp_hdr = struct.unpack('!4H', data_recv[:8])
+    udp_hdr = struct.unpack('!4H', data_recv[:8])   # unpacks the packed value into original representeation with specified format. 
     src_port = udp_hdr[0]
     dst_port = udp_hdr [1]
     length =udp_hdr[2]
     checksum = udp_hdr[3]
     data = data_recv [8:]
     
+    
+    #printing variables 
     print('_____UDP HEADER_____')
     print(f'Source: {src_port}')            # string formating from %hu
     print(f'Destination: {dst_port}')
@@ -27,9 +37,12 @@ def analyze_udp_header(data_recv):
     print(f'Checksum: {checksum}')
     
     return data
+
+
+
     
 def analyze_tcp_header(data_recv):
-    tcp_hdr = struct.unpack('!2H2I4H', data_recv[:20])
+    tcp_hdr = struct.unpack('!2H2I4H', data_recv[:20])  # unpacks the packed value into original representeation with specified format. 
     src_port = tcp_hdr[0]
     dst_port = tcp_hdr[1]
     seq_num = tcp_hdr[2]
@@ -49,22 +62,28 @@ def analyze_tcp_header(data_recv):
     syn = bool(flags & 0x0002)
     fin = bool(flags & 0x0001)
     
+    
+    
     print('__________TCP HEADER__________')
     print(f'Source: {src_port}')                #string formating from %hu
-    print(f'Destination: {dst_port}')
-    print(f'Seq: {seq_num}')
-    print(f'Ack: {ack_num}')
-    print('Flags: ')
-    print(f'URG: {urg}')
-    print(f'ACK: {ack}')
-    print(f'PSH: {psh}')
-    print(f'RST: {rst}')
-    print(f'SYN: {syn}')
-    print(f'FIN: {fin}')
-    print(f'Winsize: {window}')
-    print(f'Checksum: {checksum}')
+    print(f'Destination: {dst_port}')           #string formating from %hu
+    print(f'Seq: {seq_num}')                    #string formating from %hu
+    print(f'Ack: {ack_num}')                    #string formating from %hu
+    print('Flags: ')                            #string formating from %hu
+    print(f'URG: {urg}')                        #string formating from %hu
+    print(f'ACK: {ack}')                        #string formating from %hu
+    print(f'PSH: {psh}')                        #string formating from %hu
+    print(f'RST: {rst}')                        #string formating from %hu
+    print(f'SYN: {syn}')                        #string formating from %hu
+    print(f'FIN: {fin}')                        #string formating from %hu
+    print(f'Winsize: {window}')                 
+    print(f'Checksum: {checksum}')              
     
     return data
+    
+    
+    
+    
     
 def analyze_ip_header(data_recv):
     '''
@@ -75,7 +94,7 @@ def analyze_ip_header(data_recv):
     Search and check out the 'ip header structure' for more understanding on IP heaxer and protocols.
     '''
     
-    ip_hdr = struct.unpack('!6H4s4s', data_recv[:20])
+    ip_hdr = struct.unpack('!6H4s4s', data_recv[:20]) 
     ver = ip_hdr[0] >> 12
     ihl = (ip_hdr[0] >> 8) & 0x0f
     tos = ip_hdr[0] & 0x00ff
@@ -90,18 +109,24 @@ def analyze_ip_header(data_recv):
     dst_address = socket.inet_ntoa(ip_hdr[7])
     data = data_recv[20:]
     
+    
+    #printing out variables
     print('__________IP HEADER__________')
     print(f'Version: {ver}')                    #string formating from %hu
-    print(f'IHL: {ihl}')
-    print(f'TOS: {tos}')
-    print(f'Length: {tot_len}')
-    print(f'ID: {ip_id}')
-    print(f'Offset: {frag_offset}')
-    print(f'TTl: {ip_ttl}')
-    print(f'Proto: {ip_proto}')
-    print(f'Checksum: {checksum}')
+    print(f'IHL: {ihl}')                        #string formating from %hu
+    print(f'IHL: {ihl}')                        #string formating from %hu
+    print(f'IHL: {ihl}')                        #string formating from %hu
+    print(f'TOS: {tos}')                        #string formating from %hu
+    print(f'Length: {tot_len}')                 #string formating from %hu
+    print(f'ID: {ip_id}')                       #string formating from %hu
+    print(f'Offset: {frag_offset}')             #string formating from %hu
+    print(f'TTl: {ip_ttl}')                     #string formating from %hu
+    print(f'Proto: {ip_proto}')                 #string formating from %hu
+    print(f'Checksum: {checksum}')              #string formating from %hu
     print(f'Source IP: {src_address}')          #string formating from %s
     print(f'Destination: {dst_address}')        #string formating from %s
+    
+    
     
     if ip_proto == 6:
         tcp_udp = "TCP"
@@ -111,10 +136,14 @@ def analyze_ip_header(data_recv):
         tcp_udp = "OTHER"
         
     return data, tcp_udp
+
+
+
+
         
 def analyze_ether_header(data_recv):
     '''
-    The '!6s6sH' is designed to allow the struct.unpack function to convert the data recievd from the data_recv
+    The '!6s6sH' is designed to allow the struct.unpack function to convert the data recieved from the data_recv
     variable which comes in a long string of data and needs to be broken down to be interpreted
     and integrated for usage!
     '''
@@ -136,6 +165,11 @@ def analyze_ether_header(data_recv):
         ip_bool = True
         
     return data, ip_bool    
+    
+    
+    
+    
+    
     
 def main():
     global sock_created
@@ -162,7 +196,9 @@ def main():
         data_recv = analyze_udp_header(data_recv)
     else:
         return
-    
+
+
+# calling function
 while True:
     main()
     
