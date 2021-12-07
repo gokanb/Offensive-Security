@@ -11,11 +11,11 @@ REMOTE_SERVER_HOST = 'http://www.cnn.com'
 
 class HTTPClient:
     
-    def __init__(self, host):
+    def __init__(self, host): 
         self.host = host
         
     def fetch(self):
-        response = urllib.request.urlopen(self.host)
+        response = urllib.request.urlopen(self.host) #open website and fetch everything 
         data = response.read()
         text = data.decode('utf-8')
         return text
