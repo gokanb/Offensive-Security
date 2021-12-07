@@ -1,4 +1,4 @@
-
+#!/ur/bin/env python
 
 from http.server import BaseHTTPRequestHandler
 
