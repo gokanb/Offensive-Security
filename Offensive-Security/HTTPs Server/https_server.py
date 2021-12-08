@@ -1,7 +1,7 @@
 #!/ur/bin/env python
 
 # Author:Gokan Bektas
-# Description: 
+# Description: we created secure server. 
 
 import socket
 from OpenSSL import SSL
