@@ -2,7 +2,7 @@
 # Autor:
 # Description: Creating a server. compress data transfer. 
 
-
+#importing libraries
 import argparse
 import string
 import os
@@ -12,11 +12,13 @@ import io
 from http.server import BaseHTTPRequestHandler
 from http.server import HTTPServer
 
+#creating local host and port
 DEFAULT_HOST = '127.0.0.1'
 DEFAULT_PORT = 8000
-
+#creating content
 HTML_CONTENT = b"""<html><body><h1>Compressed Hello</h1></body></html>"""
 
+#creating class request handler, sends response send header close it and compress in a file 
 class RequestHandler(BaseHTTPRequestHandler):
     """ Custom request handler """
     
