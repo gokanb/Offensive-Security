@@ -1,4 +1,6 @@
 #!/usr/bin/python
+#Author: Gokan Bektas
+#Description: This application will spoof the browser cookies as given browser. 
 
 import urllib.request
 import urllib.error
