@@ -3,7 +3,7 @@
 # Author:Gokan Bektas
 # Description: 
 
-import socket, os
+import socket
 from OpenSSL import SSL
 from socketserver import BaseServer
 from http.server import HTTPServer
@@ -31,10 +31,17 @@ class SecureHTTPrequestHandler(SimpleHTTPRequestHandler):
 def run_server(HandlerClass = SecureHTTPrequestHandler, ServerClass = SecureHTTPServer):
     server_address = ('', 4443) #port needs to be accessible by user
     server = ServerClass(server_address, HandlerClass)
-    running_address = server.socket.getsocketname()
+    running_address = server.socket.getsockname()
     print (f'Serving HTTPS Server On {running_address[0]} : {running_address[1]}')
     server.serve_forever()
     
 
 if __name__ == '__main__':
     run_server()
+    
+
+# generate pem key
+# openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
+
+# redirecting > 
+# add >>
