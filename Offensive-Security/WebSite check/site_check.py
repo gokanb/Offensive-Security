@@ -1,5 +1,6 @@
 #!/usr/bin/python
-
+#Author: Gokan Bektas
+#Description: This script will check if website is found, ok , or moved!
 import argparse
 import http.client
 import urllib.parse
