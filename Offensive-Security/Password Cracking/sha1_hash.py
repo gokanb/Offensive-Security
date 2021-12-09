@@ -27,6 +27,7 @@ for password in file.readlines():
     hashguess = hashlib.sha1(bytes(password, 'utf-8')).hexdigest()
     if hashguess == sha1hash:
         print(colored('[+] the password is: ' + str(password), 'white'))
+        quit()
     else:
         print(colored('[-] Password guess: ' + str(password) + ' does not match, trying next...', 'red'))
         
