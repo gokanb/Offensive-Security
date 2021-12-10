@@ -19,7 +19,6 @@ from termcolor import colored
 # creating variable as hasvalue holds input to ask user input.
 hashvalue = input(colored('Enter a string to hash: '))     
 
-
 # hash_object1 is our variable that stores = hashlib.md5() in this case 'the version of encrypt is .md5'
 # update hashvalue.encode () will encode the string. 
 # print() output will print out encrypted value of given string.
@@ -32,18 +31,20 @@ print(colored('Text: ' + hashvalue + ' with the md5-hashed is converted to: ' + 
 
 # hash_object2 is our variable that stores = haslib.sha1  in this case 'the version of encrypt is .sha1'
 # print() will print out encrypted value of given string in choosen color.
+# hexidigest returns the encoded data in hexadecimal format.
+# colored ('string: ' + variable + 'string:' + arg.() ,  'choosen color') prints as colored.
 hash_object2 = hashlib.sha1()
 hash_object2.update(hashvalue.encode())
 print(colored('Text: ' + hashvalue + ' with the sha1-hashed is converted to: ' + hash_object2.hexdigest(), 'red'))
 
-# hash_object3 = hashlib.sha224()
-# hash_object3.update(hashvalue.encode())
-# print(colored('Text: ' + hashvalue + ' with the sha224-hashed is converted to: ' + hash_object3.hexdigest(), 'magenta'))
+hash_object3 = hashlib.sha224()
+hash_object3.update(hashvalue.encode())
+print(colored('Text: ' + hashvalue + ' with the sha224-hashed is converted to: ' + hash_object3.hexdigest(), 'magenta'))
 
-# hash_object4 = hashlib.sha256()
-# hash_object4.update(hashvalue.encode())
-# print(colored('Text: ' + hashvalue + ' with the sha256-hashed is converted to: ' + hash_object4.hexdigest(), 'white'))
+hash_object4 = hashlib.sha256()
+hash_object4.update(hashvalue.encode())
+print(colored('Text: ' + hashvalue + ' with the sha256-hashed is converted to: ' + hash_object4.hexdigest(), 'white'))
 
-# hash_object5 = hashlib.sha512()
-# hash_object5.update(hashvalue.encode())
-# print(colored('Text: ' + hashvalue + ' with the sha512-hashed is converted to: ' + hash_object5.hexdigest(), 'cyan'))
+hash_object5 = hashlib.sha512()
+hash_object5.update(hashvalue.encode())
+print(colored('Text: ' + hashvalue + ' with the sha512-hashed is converted to: ' + hash_object5.hexdigest(), 'cyan'))
