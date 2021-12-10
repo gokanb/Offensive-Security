@@ -1,15 +1,25 @@
 #!/ur/bin/env python
 
-# Author:Gokan Bektas
+'''
+
+# Author: Gokan Bektas
 # Description:
+                         ########################## Educational Purpose !!! ##########################
+# This script will use bruteforce to crack username and passwords thru using dictonary.txt store and pass1.txt store! 
+# Script have couple of python libraries. Crytp crypt. crypt(password) will return the hash of password. 
+# You store the hash instead of the clear text password. 
+# That way, you can't lose the password to a hacker because you don't have it.
 
-import crypt
-from termcolor import colored
+'''
 
+# importing libraries
+import crypt                        
+from termcolor import colored       
 
-def crackedPass(cryptWord):
-    salt = cryptWord[0:2]
-    dictionary = open ('dictionary.txt', 'r')
+# Function 
+def crackedPass(cryptWord): 
+    salt = cryptWord[0:2]                                                   
+    dictionary = open ('dictionary.txt', 'r')                               
     for word in dictionary.readlines():
         word = word.strip('\n')
         cryptPass = crypt.crypt(word, salt)

@@ -1,9 +1,15 @@
 #!/ur/bin/env python
 
-# Author:Gokan Bektas
-# Description: 
+'''
 
-from urllib.request import urlopen
+# Author: Gokan Bektas
+# Description:
+                        ########################## Educational Purpose !!! ##########################
+# This script will take sha1 value after  
+
+'''
+
+# from urllib.request import urlopen
 import hashlib
 from termcolor import colored
 
