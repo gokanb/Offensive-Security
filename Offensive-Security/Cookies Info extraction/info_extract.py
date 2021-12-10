@@ -5,8 +5,8 @@ import urllib
 
 ID_USERNAME = 'id_username'
 ID_PASSWORD = 'id_password'
-USERNAME = 'gknbkts95@gmail.com'
-PASSWORD = 'Bitbucket2020.'
+USERNAME = 'u@gmail.com'
+PASSWORD = 'password'
 LOGIN_URL = 'https://bitbucket.org/account/signin/?next=/'
 NORMAL_URL = 'https://bitbucket.org'
 
