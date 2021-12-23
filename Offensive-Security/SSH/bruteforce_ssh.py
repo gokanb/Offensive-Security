@@ -1,7 +1,15 @@
 #!/ur/bin/env python
 
 # Author:Gokan Bektas
-# Description: 
+
+
+
+'''
+    Description: --> 
+
+'''
+
+
 
 import pexpect #allow us to send particular target 
 from termcolor import colored
@@ -38,7 +46,7 @@ def main():
     for password in file.readlines():
         password = password.strip('\n')
         try:
-            chil = connect(user, host, password)
+            child = connect(user, host, password)
             print(colored('[+] Password found: ' + password, 'blue'))
         
         except:

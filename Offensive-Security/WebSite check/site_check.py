@@ -8,7 +8,7 @@ import re
 import urllib.request, urllib.error
 
 
-DEFAULT_URL = 'http://www.python.org'
+DEFAULT_URL = 'http://www.amazon.com'
 
 HTTP_GOOD_CODES = [http.client.OK, http.client.FOUND, http.client.MOVED_PERMANENTLY]
 
