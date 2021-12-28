@@ -8,7 +8,7 @@ import socket
 import pyfiglet
 import sys
 
-banner = pyfiglet.figlet_format(' PORT SCANNER ')
+banner = pyfiglet.figlet_format(' BLACK SHARK ')
 print(banner)  #import banner to make looks fancy
 
 # if len(sys.argv) == 2: 
