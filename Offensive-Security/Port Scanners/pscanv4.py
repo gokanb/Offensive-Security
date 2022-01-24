@@ -9,6 +9,10 @@ import argparse
 from threading import *
 from typing import final
 from colorama import Fore, Style #color and style print out. 
+import pyfiglet
+
+banner = pyfiglet.figlet_format(' BLACK SHARK ')
+print(banner)  #import banner to make looks fancy
 
 #Scanning connection of host's that open or close. 
 def connScan(host, port):
