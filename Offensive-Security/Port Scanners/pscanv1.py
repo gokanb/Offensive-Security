@@ -7,8 +7,8 @@
 import socket
 #from socket import *
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host = '192.168.123.123'
-port = 92
+host = '192.168.1.184'
+port = 90
 
 def portScan(port):
     result = sock.connect_ex((host,port))

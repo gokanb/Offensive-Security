@@ -43,7 +43,7 @@ if __name__ == '__main__':
     print('[+] Welcome to MAC ADDRESS Changer')
     print('[+] Press CTRL+C to QUIT')
     
-    TIME_TO_WAIT = 60
+    TIME_TO_WAIT = 5
     interface = get_arguments()
     current_mac = get_current_mac(interface)
     

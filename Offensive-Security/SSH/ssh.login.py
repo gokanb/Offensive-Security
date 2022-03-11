@@ -5,7 +5,7 @@
 
 import pexpect #allow us to send particular target 
 
-PROMPT = ['# ', '>>> ', '>' '\$ ']
+PROMPT = ['#' , '>>>' , '>' , '\$']
 
 def connect(user, host, password):
     ssh_newkey = "Are you sure you want to continue connecting? "

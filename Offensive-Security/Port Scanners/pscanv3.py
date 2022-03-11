@@ -8,7 +8,7 @@ import socket
 import pyfiglet
 import sys
 
-banner = pyfiglet.figlet_format(' BLACK SHARK ')
+banner = pyfiglet.figlet_format(' BLACK SHARK,  Port Scanner ')
 print(banner)  #import banner to make looks fancy
 
 # if len(sys.argv) == 2: 
@@ -20,7 +20,7 @@ print(banner)  #import banner to make looks fancy
 targetIP = input('Please enter the target IP: ')
 
 try:
-    for i in range(1, 50):
+    for i in range(1, 5000):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         result = sock.connect_ex((targetIP, i))
         if result == 0:

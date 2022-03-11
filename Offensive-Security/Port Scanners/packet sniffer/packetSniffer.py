@@ -21,7 +21,8 @@ sniffer_socket = 0      # zero refers false , one refers true
 
 # def function for analyze udp header
 def analyze_udp_header(data_recv):
-    udp_hdr = struct.unpack('!4H', data_recv[:8])   # unpacks the packed value into original representeation with specified format. 
+    udp_hdr = struct.unpack('!4H', data_recv[:8]) 
+    print()# unpacks the packed value into original representeation with specified format. 
     src_port = udp_hdr[0]
     dst_port = udp_hdr [1]
     length =udp_hdr[2]

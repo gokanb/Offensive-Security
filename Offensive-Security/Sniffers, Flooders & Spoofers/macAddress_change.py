@@ -5,9 +5,10 @@ from termcolor import colored
 
 
 def change_mac_add(interface, mac):
-    subprocess.call(["ifconfig " + interface + " down "])
-    subprocess.call(["ifconfig " + interface + " hw " + "ether " + mac])
-    subprocess.call(["ifconfig " + interface + " up "])
+    print(interface)
+    subprocess.call(["ifconfig " + interface + " down "], shell=True)
+    subprocess.call(["ifconfig " + interface + " hw " + "ether " + mac], shell=True)
+    subprocess.call(["ifconfig " + interface + " up "], shell=True)
     
 def main():
     interface = input('[* ]Enter interface to change MAC address on: ')
