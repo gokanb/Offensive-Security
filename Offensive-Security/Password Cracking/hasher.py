@@ -2,11 +2,15 @@
 
 '''
 # Author: Gokan Bektas
-# Description:
+# Description: 
+# Date : 12-10-2021
+# Version : 1.4
                         ########################## Educational Purpose !!! ##########################
+                        
 # This script will take given input string by user and print out as encrypted. 
 # There are a few different versions we can get from hashlib library and i've used such as md5, sha1..sha512
 # Tip: More you encrypt the more time it takes to decrypt.
+
 '''
 
 # importing libraries 
