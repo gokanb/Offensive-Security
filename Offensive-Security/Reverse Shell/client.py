@@ -1,7 +1,13 @@
 #!/ur/bin/env python
 
-# Author:Gokan Bektas
-# Description: 
+'''
+# Author: Gokan Bektas
+# Date: 3-10-2022
+# Version: 1.2
+                         ########################## Educational Purpose !!! ##########################
+                         
+# Description: This is a reverse shell application, script will run client localhost. 
+'''
 
 import socket
 import os

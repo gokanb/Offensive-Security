@@ -1,7 +1,14 @@
 #!/ur/bin/env python
 
-# Author:Gokan Bektas
-# Description: This script will listen server host 0.0.0.0 port 5003
+'''
+# Author: Gokan Bektas
+# Date: 3-10-2022
+# Version: 1.2
+                         ########################## Educational Purpose !!! ##########################
+                         
+# Description: This is a reverse shell application, script will listen server host. 
+'''
+
 
 import socket
 from termcolor import colored
