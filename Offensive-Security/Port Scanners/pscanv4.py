@@ -1,7 +1,13 @@
 #!/ur/bin/env python
+'''
 # Author: Gokan Bektas
-# Description: 
+# Description: This program will scann connection and Ports are of host that open or close.
+# Date : 3-10-22
+# Version : 1.3
 
+                        ########################## Educational Purpose !!! ##########################
+ 
+'''
 
 #importing libraries 
 from socket import *
@@ -11,7 +17,7 @@ from typing import final
 from colorama import Fore, Style #color and style print out. 
 import pyfiglet
 
-banner = pyfiglet.figlet_format(' BLACK SHARK ')
+banner = pyfiglet.figlet_format(' Port     Scanner ')
 print(banner)  #import banner to make looks fancy
 
 #Scanning connection of host's that open or close. 
@@ -48,7 +54,7 @@ def portScan(host, ports):
     
     
 def main():
-    parser = argparse.ArgumentParser(prog = 'advScan.py', usage = '-d sam.com -p 21,22',
+    parser = argparse.ArgumentParser(prog = 'pscanv4.py', usage = '-d sam.com -p 21,22',
     description = 'Scan a port stated target host IP')
     parser.add_argument('-d', '--host', help = 'Specify a target')
     parser.add_argument('-p', '--port', help = 'Specify target ports seperated by coma')
@@ -66,4 +72,3 @@ def main():
     
 main()
 
-#python pscanv4.py -d www.google.com -p 80 

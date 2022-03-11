@@ -1,7 +1,14 @@
 #!/ur/bin/env python
 
-# Author:Gokan Bektas
-# Description: 
+'''
+# Author: Gokan Bektas
+# Description: This program will ask user input domain and it will loop 1
+# Date : 3-10-22
+# Version : 1.2
+
+                        ########################## Educational Purpose !!! ##########################
+ 
+'''
 
 #importing libraries
 import socket
@@ -20,7 +27,7 @@ print(banner)  #import banner to make looks fancy
 targetIP = input('Please enter the target IP: ')
 
 try:
-    for i in range(1, 5000):
+    for i in range(1, 1000):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         result = sock.connect_ex((targetIP, i))
         if result == 0:

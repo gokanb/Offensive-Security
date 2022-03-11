@@ -2,7 +2,7 @@
 
 '''
 # Author: Gokan Bektas
-# Description:
+# Description: This is a brute force sha1 has descryption. Passed password.txt 
                         ########################## Educational Purpose !!! ##########################
  
             --- Before running this application make sure that first, you hash one of the decrypt value from given list 
